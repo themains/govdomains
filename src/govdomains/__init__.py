@@ -1,5 +1,7 @@
 """Government hostname inference and evidence collection."""
 
+from importlib.metadata import version
+
 from .bundled import bundled_sources, load_bundled
 from .core import Classifier, Evidence, Result, Rule, load_rules
 from .normalize import normalize_hostname
@@ -11,8 +13,10 @@ __all__ = [
     "Result",
     "Rule",
     "Snapshot",
-    "load_rules",
-    "normalize_hostname",
     "bundled_sources",
     "load_bundled",
+    "load_rules",
+    "normalize_hostname",
 ]
+
+__version__ = version("govdomains")

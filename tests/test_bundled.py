@@ -96,7 +96,7 @@ def test_corrupt_table_is_rejected_even_with_matching_checksum(defect):
     sink = io.BytesIO()
     pq.write_table(table, sink)
     corrupted = sink.getvalue()
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match=r"[Bb]undled|scope"):
         decode_bundle(
             corrupted, {**entry, "sha256": hashlib.sha256(corrupted).hexdigest()}
         )

@@ -104,10 +104,10 @@ source labels are preserved without creating a universal government hierarchy.
 From the repository root:
 
 ```sh
-pip install -e '.[dev]'
-python scripts/update_bundles.py fetch --collection 2026-11-06
-python scripts/update_bundles.py import-research ../gov_privacy
-python scripts/update_bundles.py build
+uv sync --all-groups
+uv run python scripts/update_bundles.py fetch --collection 2026-11-06
+uv run python scripts/update_bundles.py import-research ../gov_privacy
+uv run python scripts/update_bundles.py build
 make ci
 ```
 

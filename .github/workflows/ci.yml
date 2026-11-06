@@ -1,23 +1,27 @@
 name: CI
+
 on:
   push:
+    branches: [main]
   pull_request:
+  schedule:
+    - cron: "17 6 * * 1"  # weekly: surface ecosystem drift on quiet repos
+  # A merge made with GITHUB_TOKEN does not trigger workflows, so an
+  # auto-merged Dependabot PR leaves the default branch at a commit no CI run
+  # ever covered. The auto-merge sweep dispatches this after it lands one.
+  workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ['3.11', '3.12', '3.13', '3.14']
-    steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-python@v7.1.0
-        with:
-          python-version: ${{ matrix.python-version }}
-      - run: python -m pip install '.[dev]'
-      - run: make ci
-      - run: python -m pip install --force-reinstall --no-deps dist/*.whl
-      - run: cd /tmp && govdomains classify agency.gov agency.gov.example.org
-      - run: cd /tmp && python -m pytest "$GITHUB_WORKSPACE/tests" -q
+  ci:
+    uses: gojiplus/py-canon/.github/workflows/reusable-ci.yml@v1
+    with:
+      wheel-import: govdomains
+      coverage-floor: 0
+      run-preen: true

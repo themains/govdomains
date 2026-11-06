@@ -1,5 +1,0 @@
-include CHANGELOG.md SPEC.md Makefile .flake8
-include data/README.md
-recursive-include scripts *.py
-recursive-include tests/fixtures *.html
-prune data/raw

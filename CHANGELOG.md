@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Adopt py-canon shared workflows, uv/uv_build, dependency groups, Ruff, Pyright, and strict pytest settings; require Python 3.12 or newer.
+- Add Sphinx/Furo documentation with a README include, generated API pages, and executable guide examples.
+- Remove the redundant implementation specification and legacy setuptools/Flake8 configuration.
+- Name the Python list-import option `source_format`; the CLI flag remains `--format`.
+
 - Bundle current CISA/Govdirectory snapshots and separately selectable undated research extracts as validated Parquet tables.
 - Add offline Python and CLI list loading, with provenance, scope, hashes, counts, and source licenses.
 - Archive current Govdirectory jurisdiction pages and pinned CISA CSV responses; rebuild tables offline from raw archives.

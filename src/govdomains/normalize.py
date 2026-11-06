@@ -43,6 +43,7 @@ def normalize_hostname(value: str) -> str:
 
 
 def has_page_path(value: str) -> bool:
+    """Report whether an address identifies a path, query, or fragment."""
     parsed = urlsplit(
         value if "://" in value or value.startswith("//") else "//" + value
     )

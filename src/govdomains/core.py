@@ -2,10 +2,10 @@
 
 import json
 from collections import defaultdict
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass, field, replace
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
 from importlib.resources import files
-from typing import Iterable
 
 from .normalize import has_page_path, normalize_hostname
 
@@ -13,14 +13,18 @@ LABELS = {"government", "not_government", "unknown"}
 
 
 def validate_date(value: str | None) -> str | None:
-    if value is not None:
-        if not isinstance(value, str) or date.fromisoformat(value).isoformat() != value:
-            raise ValueError("Dates must use YYYY-MM-DD")
+    """Validate a nullable ISO calendar date and return it unchanged."""
+    if value is not None and (
+        not isinstance(value, str) or date.fromisoformat(value).isoformat() != value
+    ):
+        raise ValueError("Dates must use YYYY-MM-DD")
     return value
 
 
 @dataclass(frozen=True)
 class Rule:
+    """A hostname rule with explicit scope, provenance, and optional validity dates."""
+
     suffix: str
     country: str | None = None
     scope: str = "subtree"
@@ -31,6 +35,7 @@ class Rule:
     valid_to: str | None = None
 
     def __post_init__(self):
+        """Normalize the suffix and validate labels, scope, and date bounds."""
         object.__setattr__(self, "suffix", normalize_hostname(self.suffix))
         if self.scope not in {"exact", "subtree"} or self.label not in LABELS:
             raise ValueError("Invalid rule scope or label")
@@ -40,6 +45,7 @@ class Rule:
             raise ValueError("Rule interval must have a start before its exclusive end")
 
     def matches(self, hostname: str) -> bool:
+        """Match a normalized hostname within the declared rule scope."""
         return hostname == self.suffix or (
             self.scope == "subtree" and hostname.endswith("." + self.suffix)
         )
@@ -47,6 +53,8 @@ class Rule:
 
 @dataclass(frozen=True)
 class Evidence:
+    """One source observation about a hostname or a page on that hostname."""
+
     hostname: str
     source: str
     method: str = "list"
@@ -56,6 +64,7 @@ class Evidence:
     attributes: dict = field(default_factory=dict)
 
     def __post_init__(self):
+        """Validate the observation and normalize its hostname."""
         object.__setattr__(self, "hostname", normalize_hostname(self.hostname))
         if self.label not in LABELS or self.scope not in {"exact", "page"}:
             raise ValueError("Invalid evidence label or scope")
@@ -67,6 +76,8 @@ class Evidence:
 
 @dataclass(frozen=True)
 class Result:
+    """A classification with supporting evidence, rules, and its evaluation date."""
+
     hostname: str | None
     label: str
     status: str
@@ -79,6 +90,7 @@ class Result:
 
     @property
     def methods(self) -> tuple[str, ...]:
+        """Return the distinct methods contributing classification signals."""
         return tuple(
             sorted(
                 ({"pattern"} if self.rules else set())
@@ -91,6 +103,7 @@ class Result:
         )
 
     def to_dict(self) -> dict:
+        """Return a JSON-compatible representation including contributing methods."""
         return {**asdict(self), "methods": list(self.methods)}
 
 
@@ -112,6 +125,7 @@ class Classifier:
     def __init__(
         self, evidence: Iterable[Evidence] = (), *, rules: Iterable[Rule] | None = None
     ):
+        """Index observations and use default rules unless others are supplied."""
         self.rules = tuple(load_rules() if rules is None else rules)
         self._evidence: dict[str, list[Evidence]] = defaultdict(list)
         for item in evidence:
@@ -124,8 +138,9 @@ class Classifier:
         as_of: str | None = None,
         allow_undated_rules: bool = False,
     ) -> Result:
+        """Infer affiliation for one hostname or URL from eligible signals."""
         validate_date(as_of)
-        cutoff = as_of or datetime.now(timezone.utc).date().isoformat()
+        cutoff = as_of or datetime.now(UTC).date().isoformat()
         try:
             host = normalize_hostname(value)
             path_ignored = has_page_path(value)
@@ -181,7 +196,9 @@ class Classifier:
             (
                 "conflicting_evidence"
                 if conflict
-                else "matched" if labels else "no_signal"
+                else "matched"
+                if labels
+                else "no_signal"
             ),
             tuple(matches),
             evidence,
@@ -191,6 +208,7 @@ class Classifier:
         )
 
     def classify(self, values: Iterable[str], **kwargs) -> list[Result]:
+        """Classify an iterable of hostnames using the same date and rule options."""
         if isinstance(values, str):
             raise TypeError("Pass an iterable of hostnames, or use classify_one")
         return [self.classify_one(value, **kwargs) for value in values]

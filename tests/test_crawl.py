@@ -112,7 +112,7 @@ def test_zero_pages_and_country_patterns():
     assert result.metadata["query_complete"]
     assert result.hostnames == ()
     assert patterns_for("United States") == ("gov", "mil")
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="No patterns"):
         patterns_for("Unknown")
 
 

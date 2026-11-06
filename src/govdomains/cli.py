@@ -15,6 +15,7 @@ from .sources import FORMATS, SOURCES, fetch_list, import_list
 
 
 def parser() -> argparse.ArgumentParser:
+    """Build the parser for classification, collection, and export commands."""
     root = argparse.ArgumentParser(description=__doc__)
     commands = root.add_subparsers(dest="command", required=True)
     classify = commands.add_parser("classify", help="Classify supplied hosts offline")
@@ -71,6 +72,7 @@ def parser() -> argparse.ArgumentParser:
 
 
 def main(argv=None) -> int:
+    """Run a command and return its process exit status."""
     args = parser().parse_args(argv)
     try:
         if args.command == "classify":
@@ -86,7 +88,9 @@ def main(argv=None) -> int:
                 values, as_of=args.as_of, allow_undated_rules=args.allow_undated_rules
             )
             for result in results:
-                print(json.dumps(result.to_dict(), ensure_ascii=False))
+                sys.stdout.write(
+                    json.dumps(result.to_dict(), ensure_ascii=False) + "\n"
+                )
             return int(any(result.status == "error" for result in results))
         if args.command == "rules":
             from dataclasses import asdict
@@ -95,12 +99,16 @@ def main(argv=None) -> int:
                 if not args.country or (
                     rule.country and rule.country.casefold() == args.country.casefold()
                 ):
-                    print(json.dumps(asdict(rule), ensure_ascii=False))
+                    sys.stdout.write(
+                        json.dumps(asdict(rule), ensure_ascii=False) + "\n"
+                    )
             return 0
         if args.command == "bundled" and not args.output:
             if args.sources:
                 raise ValueError("Supply --output when selecting bundled sources")
-            print(json.dumps(bundled_sources(), ensure_ascii=False, indent=2))
+            sys.stdout.write(
+                json.dumps(bundled_sources(), ensure_ascii=False, indent=2) + "\n"
+            )
             return 0
         if args.command == "export":
             report = Snapshot.load(args.snapshot).export_csv(
@@ -120,7 +128,7 @@ def main(argv=None) -> int:
                 snapshot = import_list(
                     args.path,
                     source=args.source,
-                    format=args.format,
+                    source_format=args.format,
                     observed_on=args.date,
                     column=args.column,
                     delimiter=args.delimiter,
@@ -136,7 +144,7 @@ def main(argv=None) -> int:
                 snapshot = Snapshot.merge(*(Snapshot.load(p) for p in args.snapshots))
             snapshot.save(args.output)
             report = {"hosts": len(snapshot.hostnames), "metadata": snapshot.metadata}
-        print(json.dumps(report, ensure_ascii=False), file=sys.stderr)
+        sys.stderr.write(json.dumps(report, ensure_ascii=False) + "\n")
         return 0
     except (
         ValueError,
@@ -146,7 +154,7 @@ def main(argv=None) -> int:
         ImportError,
         requests.RequestException,
     ) as exc:
-        print(f"govdomains: {exc}", file=sys.stderr)
+        sys.stderr.write(f"govdomains: {exc}\n")
         return 2
 
 

@@ -2,6 +2,10 @@
 
 [![CI](https://github.com/themains/govdomains/actions/workflows/ci.yml/badge.svg)](https://github.com/themains/govdomains/actions/workflows/ci.yml)
 
+[![Docs](https://github.com/themains/govdomains/actions/workflows/docs.yml/badge.svg)](https://themains.github.io/govdomains/)
+
+<!-- SPHINX-START -->
+
 Infer government affiliation from hostname patterns and source-list evidence.
 Collect candidate hosts from official lists and Common Crawl, combine the
 observations, and export estimates with their provenance.
@@ -16,7 +20,7 @@ or current use. A missing match means unknown.
 
 ## Install
 
-Python 3.11 or newer. Until a PyPI release is published:
+Python 3.12 or newer. Until a PyPI release is published:
 
 ```sh
 pip install 'govdomains[data] @ git+https://github.com/themains/govdomains.git'
@@ -80,7 +84,7 @@ and exact-host list evidence does not propagate to its subdomains.
 The four normalized tables occupy about 1.9 MB before wheel compression. Each
 has a declared Arrow schema, counts, SHA-256 checksum, upstream provenance, and
 CC0 license attribution. Raw downloaded responses are preserved in the
-repository's `data/raw/`, outside the wheel. See [data/README.md](data/README.md)
+repository's `data/raw/`, outside the wheel. See [data documentation](https://themains.github.io/govdomains/data.html)
 for source scope, historical comparisons, and the fetch/build commands.
 
 ## Classify hostnames
@@ -88,14 +92,16 @@ for source scope, historical comparisons, and the fetch/build commands.
 ```python
 from govdomains import Classifier, Evidence
 
-classifier = Classifier([
-    Evidence("city.example", source="my-reviewed-list", observed_on="2024-07-01")
-])
-for result in classifier.classify([
-    "agency.gov",
-    "city.example",
-    "agency.gov.example.org",
-]):
+classifier = Classifier(
+    [Evidence("city.example", source="my-reviewed-list", observed_on="2024-07-01")]
+)
+for result in classifier.classify(
+    [
+        "agency.gov",
+        "city.example",
+        "agency.gov.example.org",
+    ]
+):
     print(result.hostname, result.label, result.methods)
 ```
 
@@ -201,9 +207,7 @@ rows as discovery observations, not government labels.
 from govdomains import Classifier, Snapshot
 
 snapshot = Snapshot.load("old-cisa.json")
-result = Classifier(snapshot.evidence).classify_one(
-    "agency.gov", as_of="2024-07-01"
-)
+result = Classifier(snapshot.evidence).classify_one("agency.gov", as_of="2024-07-01")
 ```
 
 `as_of` includes only observations dated at or before that day. It does not infer
@@ -244,21 +248,19 @@ available, but their lists are not included in this first bundle.
 ## Development
 
 ```sh
-python -m venv .venv
-. .venv/bin/activate
-pip install -e '.[dev]'
+uv sync --all-groups
 make ci
 make ci-docker
 ```
 
-`make ci` checks Black, isort, flake8, tests, the wheel/sdist build, and package
-metadata. Tests block network access and exercise installed-package behavior,
+`make ci` runs Ruff, Pyright, docstring checks, tests, Sphinx with Furo,
+and distribution validation. `make check` runs the full preen conformance check. Tests block network access and exercise installed-package behavior,
 normalization, conflicts, historical filtering, source parsing, CLI roundtrips,
 streaming collection, pagination, checkpoints, failure recovery, bundled data
 integrity, and parsing of archived Govdirectory pages.
 
 Docker CI uses the standard `python:3.14-slim` image; override `PYTHON_IMAGE` to
-test another supported version. GitHub CI tests Python 3.11 through 3.14.
+test another supported version. GitHub CI tests Python 3.12 and 3.14 through py-canon’s shared workflow.
 
 ## Scope and next validation
 
@@ -272,5 +274,5 @@ Content-model integration (including piedomains), automatic political-level
 inference, and a maintained global dataset are not implemented. They should be
 added only after their contribution and maintenance costs are measured.
 
-See [SPEC.md](SPEC.md) for the package boundary and [CHANGELOG.md](CHANGELOG.md)
-for development history. Code is licensed under Apache-2.0.
+See [changelog](https://themains.github.io/govdomains/changelog.html) for development history. Code is licensed
+under Apache-2.0.

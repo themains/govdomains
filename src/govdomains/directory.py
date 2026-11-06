@@ -93,7 +93,10 @@ def parse_country(content: str, *, url: str, jurisdiction_label: str, observed_o
     if not agency_count:
         raise ValueError("Govdirectory agency table is empty")
     snapshot = parse_list(
-        buffer.getvalue(), source=url, format="govdirectory", observed_on=observed_on
+        buffer.getvalue(),
+        source=url,
+        source_format="govdirectory",
+        observed_on=observed_on,
     )
     snapshot.metadata.update(
         agency_rows=agency_count,

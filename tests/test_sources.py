@@ -12,7 +12,7 @@ def test_cisa_preserves_types_but_not_contacts():
         "city.gov,City,private@example.org\n"
     )
     snapshot = parse_list(
-        source, source="cisa:test", format="cisa", observed_on="2024-01-01"
+        source, source="cisa:test", source_format="cisa", observed_on="2024-01-01"
     )
     assert snapshot.evidence[0].attributes == {
         "Domain type": "City",
@@ -27,7 +27,7 @@ def test_import_reports_missing_invalid_and_shared_hosts():
         "https://platform.example/agency,Agency,National\n"
         ",Missing,x\nhttp://127.0.0.1/,IP,x\n"
     )
-    snapshot = parse_list(source, source="directory", format="india")
+    snapshot = parse_list(source, source="directory", source_format="india")
     assert snapshot.metadata["counts"] == {
         "rows": 4,
         "empty": 1,
@@ -45,7 +45,7 @@ def test_import_reports_missing_invalid_and_shared_hosts():
     ["Wrong column\na.gov\n", "hostname\na.gov,extra\n", "hostname\n127.0.0.1\n"],
 )
 def test_invalid_source_fails(source):
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match=r"column|CSV row|no usable hostnames"):
         parse_list(source, source="test")
 
 

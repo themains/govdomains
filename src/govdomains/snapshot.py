@@ -4,10 +4,9 @@ import csv
 import hashlib
 import io
 import json
-import os
 import tempfile
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
 
@@ -15,14 +14,17 @@ from .core import Classifier, Evidence, validate_date
 
 
 def canonical(value) -> str:
+    """Serialize JSON deterministically without accepting nonfinite values."""
     return json.dumps(value, sort_keys=True, ensure_ascii=False, allow_nan=False)
 
 
 def digest(value) -> str:
+    """Hash the canonical JSON representation with SHA-256."""
     return hashlib.sha256(canonical(value).encode()).hexdigest()
 
 
 def atomic_write(path: str | Path, text: str) -> None:
+    """Write UTF-8 text by replacing a temporary file on the same filesystem."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     name = None
@@ -32,23 +34,27 @@ def atomic_write(path: str | Path, text: str) -> None:
         ) as handle:
             name = handle.name
             handle.write(text)
-        os.replace(name, path)
+        Path(name).replace(path)
     finally:
-        if name and os.path.exists(name):
-            os.unlink(name)
+        if name and Path(name).exists():
+            Path(name).unlink()
 
 
 @dataclass
 class Snapshot:
+    """Deduplicated source observations and their collection metadata."""
+
     evidence: tuple[Evidence, ...]
     metadata: dict
 
     def __post_init__(self):
+        """Deduplicate identical observations and put them in deterministic order."""
         unique = {canonical(asdict(e)): e for e in self.evidence}
         self.evidence = tuple(unique[k] for k in sorted(unique))
 
     @property
     def hostnames(self) -> tuple[str, ...]:
+        """Return distinct normalized hostnames in sorted order."""
         return tuple(sorted({e.hostname for e in self.evidence}))
 
     def _payload(self) -> dict:
@@ -60,14 +66,17 @@ class Snapshot:
 
     @property
     def sha256(self) -> str:
+        """Hash the schema-versioned evidence and metadata payload."""
         return digest(self._payload())
 
     def save(self, path: str | Path) -> None:
+        """Save a snapshot with its integrity checksum."""
         payload = self._payload()
         atomic_write(path, canonical({**payload, "sha256": digest(payload)}) + "\n")
 
     @classmethod
     def load(cls, path: str | Path) -> "Snapshot":
+        """Load a snapshot after checking its schema version and checksum."""
         payload = json.loads(Path(path).read_text(encoding="utf-8"))
         checksum = payload.pop("sha256")
         if payload.get("schema_version") != 1 or digest(payload) != checksum:
@@ -98,9 +107,10 @@ class Snapshot:
         as_of: str | None = None,
         allow_undated_rules: bool = False,
     ) -> dict:
+        """Export eligible host classifications and a reproducibility manifest."""
         classifier = Classifier(self.evidence)
         validate_date(as_of)
-        cutoff = as_of or datetime.now(timezone.utc).date().isoformat()
+        cutoff = as_of or datetime.now(UTC).date().isoformat()
         hosts = sorted(
             {
                 e.hostname

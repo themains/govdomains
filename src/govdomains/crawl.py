@@ -5,7 +5,7 @@ import hashlib
 import json
 import re
 import time
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import requests
@@ -23,7 +23,7 @@ def _observe(hosts: dict, record: dict, suffix: str | None = None) -> None:
     stamp = record["timestamp"]
     if not isinstance(stamp, str) or not re.fullmatch(r"\d{14}", stamp):
         raise ValueError("Invalid Common Crawl capture timestamp")
-    datetime.strptime(stamp, "%Y%m%d%H%M%S")
+    datetime.strptime(stamp, "%Y%m%d%H%M%S").replace(tzinfo=UTC)
     first, last = hosts.get(host, (stamp, stamp))
     hosts[host] = (min(first, stamp), max(last, stamp))
 
@@ -35,7 +35,10 @@ def _evidence(hosts: dict, source: str, **attributes) -> tuple[Evidence, ...]:
             source,
             method="crawl",
             label="unknown",
-            observed_on=datetime.strptime(first, "%Y%m%d%H%M%S").date().isoformat(),
+            observed_on=datetime.strptime(first, "%Y%m%d%H%M%S")
+            .replace(tzinfo=UTC)
+            .date()
+            .isoformat(),
             attributes={"first_capture": first, "last_capture": last, **attributes},
         )
         for host, (first, last) in hosts.items()
@@ -95,6 +98,7 @@ class CommonCrawl:
     def __init__(
         self, index: str, *, session: requests.Session | None = None, delay: float = 1.0
     ):
+        """Configure a crawl index and an optional caller-owned HTTP session."""
         if not re.fullmatch(r"CC-MAIN-\d{4}-\d{2}", index):
             raise ValueError("Index must look like CC-MAIN-2024-30")
         if delay < 0:
@@ -106,13 +110,16 @@ class CommonCrawl:
         self.delay = delay
 
     def close(self):
+        """Close the HTTP session only when this client created it."""
         if self._owns_session:
             self.session.close()
 
     def __enter__(self):
+        """Return this client for use as a context manager."""
         return self
 
     def __exit__(self, *args):
+        """Release an owned HTTP session when leaving the context."""
         self.close()
 
     def collect(

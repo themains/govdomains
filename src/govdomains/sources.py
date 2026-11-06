@@ -3,7 +3,7 @@
 import csv
 import hashlib
 import io
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from importlib.metadata import version
 from pathlib import Path
 
@@ -17,10 +17,10 @@ from .snapshot import Snapshot
 
 SOURCES = {
     "cisa": (
-        "https://raw.githubusercontent.com/cisagov/dotgov-data/" "main/current-full.csv"
+        "https://raw.githubusercontent.com/cisagov/dotgov-data/main/current-full.csv"
     ),
     "gsa": (
-        "https://raw.githubusercontent.com/GSA/govt-urls/" "main/1_govt_urls_full.csv"
+        "https://raw.githubusercontent.com/GSA/govt-urls/main/1_govt_urls_full.csv"
     ),
 }
 FORMATS = {
@@ -45,6 +45,7 @@ FORMATS = {
 
 
 def http_session() -> requests.Session:
+    """Create a session with bounded retries for transient source failures."""
     session = requests.Session()
     retries = Retry(
         total=3,
@@ -64,7 +65,7 @@ def parse_list(
     content: str,
     *,
     source: str,
-    format: str = "generic",
+    source_format: str = "generic",
     observed_on: str | None = None,
     column: str | None = None,
     delimiter: str | None = None,
@@ -76,9 +77,9 @@ def parse_list(
     Missing or invalid values are counted; missing schema raises an error.
     """
     validate_date(observed_on)
-    if format not in FORMATS:
-        raise ValueError(f"Unknown list format: {format}")
-    default_column, default_delimiter, attributes = FORMATS[format]
+    if source_format not in FORMATS:
+        raise ValueError(f"Unknown list format: {source_format}")
+    default_column, default_delimiter, attributes = FORMATS[source_format]
     column = column or default_column
     reader = csv.DictReader(
         io.StringIO(content.lstrip("\ufeff")), delimiter=delimiter or default_delimiter
@@ -121,7 +122,7 @@ def parse_list(
         tuple(evidence),
         {
             "source": source,
-            "format": format,
+            "format": source_format,
             "observed_on": observed_on,
             "content_sha256": hashlib.sha256(content.encode()).hexdigest(),
             "counts": counts,
@@ -149,8 +150,8 @@ def fetch_list(name: str, *, session: requests.Session | None = None) -> Snapsho
             result = parse_list(
                 response.text,
                 source=SOURCES[name],
-                format=name,
-                observed_on=datetime.now(timezone.utc).date().isoformat(),
+                source_format=name,
+                observed_on=datetime.now(UTC).date().isoformat(),
             )
             result.metadata["date_basis"] = "retrieval_observation"
             result.metadata["etag"] = response.headers.get("ETag")

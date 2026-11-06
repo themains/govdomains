@@ -4,11 +4,14 @@ import argparse
 import gzip
 import hashlib
 import json
+import logging
+import shutil
 import subprocess
+import sys
 import time
 import zlib
 from dataclasses import replace
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -24,10 +27,12 @@ LICENSE_URL = "https://www.govdirectory.org/about/"
 
 
 def checksum(content):
+    """Hash a raw response body or encoded table."""
     return hashlib.sha256(content).hexdigest()
 
 
 def archive(path, record):
+    """Atomically save a response record in a reproducible gzip archive."""
     content = (json.dumps(record, ensure_ascii=False, sort_keys=True) + "\n").encode()
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(".tmp")
@@ -36,6 +41,7 @@ def archive(path, record):
 
 
 def read_archive(path):
+    """Read an archived response and verify successful retrieval and its checksum."""
     record = json.loads(gzip.decompress(path.read_bytes()))
     if (
         record.get("ok") is not True
@@ -46,6 +52,7 @@ def read_archive(path):
 
 
 def fetch_archive(session, url, path):
+    """Resume a verified response archive or explicitly retrieve its source."""
     if path.exists():
         try:
             record = read_archive(path)
@@ -58,7 +65,7 @@ def fetch_archive(session, url, path):
         body = response.content.decode("utf-8")
         record = {
             "url": url,
-            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "fetched_at": datetime.now(UTC).isoformat(),
             "status": response.status_code,
             "ok": response.status_code == 200,
             "etag": response.headers.get("ETag"),
@@ -70,19 +77,22 @@ def fetch_archive(session, url, path):
         response.raise_for_status()
     if not record["ok"]:
         raise ValueError(f"Unexpected source response: {response.status_code}")
-    print(f"Archived {url}", flush=True)
+    logging.getLogger(__name__).info("Archived %s", url)
     return record
 
 
 def catalog():
+    """Read the current raw-source catalog, or return an empty catalog."""
     return json.loads(CATALOG.read_text()) if CATALOG.exists() else {}
 
 
 def save_catalog(entries):
+    """Atomically replace the raw-source catalog."""
     atomic_write(CATALOG, json.dumps(entries, indent=2, sort_keys=True) + "\n")
 
 
 def descriptor(path, record, **extra):
+    """Describe an archived source using a repository-relative path."""
     return {
         "raw_path": str(path.relative_to(ROOT)),
         "url": record["url"],
@@ -150,8 +160,14 @@ def fetch(collection):
 
 
 def import_research(repository):
+    """Archive the original research extracts at an immutable Git revision."""
+    git = shutil.which("git")
+    if git is None:
+        raise RuntimeError("Git is required to import research extracts")
     revision = (
-        subprocess.check_output(["git", "-C", str(repository), "rev-parse", "HEAD"])
+        subprocess.check_output(  # noqa: S603 - fixed Git command, no shell
+            [git, "-C", str(repository), "rev-parse", "HEAD"]
+        )
         .decode()
         .strip()
     )
@@ -165,8 +181,8 @@ def import_research(repository):
         ),
         ("govdirectory_research", "combined_tsv_data.tsv", "govdirectory", LICENSE_URL),
     ]:
-        body = subprocess.check_output(
-            ["git", "-C", str(repository), "show", f"{revision}:data/{filename}"]
+        body = subprocess.check_output(  # noqa: S603 - fixed Git command, no shell
+            [git, "-C", str(repository), "show", f"{revision}:data/{filename}"]
         ).decode("utf-8")
         record = {
             "url": (
@@ -198,6 +214,7 @@ def import_research(repository):
 
 
 def build():
+    """Build and validate packaged Parquet tables entirely from archived responses."""
     entries = catalog()
     if not entries:
         raise ValueError("No archived sources; run fetch or import-research first")
@@ -223,7 +240,7 @@ def build():
                 snapshot = parse_list(
                     raw["body"],
                     source=item["url"],
-                    format=entry["format"],
+                    source_format=entry["format"],
                     observed_on=entry["observed_on"],
                 )
             audits.append(
@@ -261,7 +278,7 @@ def build():
         decode_bundle(content, manifest)
         tables[manifest["file"]] = content
         sources[name] = manifest
-        print(
+        sys.stdout.write(
             json.dumps(
                 {
                     "bundle": name,
@@ -274,6 +291,7 @@ def build():
                     },
                 }
             )
+            + "\n"
         )
     if "cisa" in entries:
         license_record = read_archive(
@@ -293,11 +311,13 @@ def build():
 
 
 def main():
+    """Run the selected collection, research-import, or offline-build stage."""
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     fetch_parser = commands.add_parser("fetch")
     fetch_parser.add_argument(
-        "--collection", default=datetime.now(timezone.utc).date().isoformat()
+        "--collection", default=datetime.now(UTC).date().isoformat()
     )
     research = commands.add_parser("import-research")
     research.add_argument("repository", type=Path)

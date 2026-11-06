@@ -76,5 +76,5 @@ def test_directory_index_keeps_jurisdiction_labels():
     ],
 )
 def test_changed_or_invalid_directory_pages_fail(content):
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="Govdirectory"):
         parse(content)

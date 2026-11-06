@@ -4,7 +4,7 @@ from govdomains import Classifier, Evidence, Rule, load_rules, normalize_hostnam
 
 
 @pytest.mark.parametrize(
-    "value,host",
+    ("value", "host"),
     [
         ("HTTPS://Agency.GOV.:443/path?q=1", "agency.gov"),
         ("https://政务.cn/", "xn--zfr164b.cn"),
@@ -139,9 +139,9 @@ def test_historical_crawl_summary_withholds_future_capture():
 
 
 def test_dates_and_batch_shape_validate():
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="YYYY-MM-DD"):
         Evidence("a.gov", "x", observed_on="20250101")
-    with pytest.raises(ValueError):
+    with pytest.raises(ValueError, match="Invalid isoformat"):
         Classifier().classify_one("a.gov", as_of="not-a-date")
     with pytest.raises(TypeError):
         Classifier().classify("agency.gov")

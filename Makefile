@@ -1,25 +1,32 @@
-PYTHON ?= python3
 PYTHON_IMAGE ?= python:3.14-slim
 
-.PHONY: format lint test build ci ci-docker
+.PHONY: format lint test docs build check ci ci-docker
 
 format:
-	$(PYTHON) -m isort src tests scripts
-	$(PYTHON) -m black src tests scripts
+	uv run ruff check --fix
+	uv run ruff format
 
 lint:
-	$(PYTHON) -m black --check src tests scripts
-	$(PYTHON) -m isort --check-only src tests scripts
-	$(PYTHON) -m flake8 src tests scripts
+	uv run ruff check
+	uv run ruff format --check
+	uv run pyright
+	uvx pydoclint==0.9.1 --config pyproject.toml src scripts
 
 test:
-	$(PYTHON) -m pytest --cov=govdomains --cov-report=term-missing
+	uv run pytest --cov --cov-report=term-missing
+
+docs:
+	uv run sphinx-build -W --keep-going -b html docs docs/_build/html
+	uv run sphinx-build -W --keep-going -b doctest docs docs/_build/doctest
 
 build:
-	$(PYTHON) -m build
-	$(PYTHON) -m twine check dist/*
+	uv build
+	uvx twine check dist/*
 
-ci: lint test build
+check:
+	uvx preen check --strict --explain
+
+ci: lint test docs build
 
 ci-docker:
-	docker run --rm -v "$(CURDIR):/source:ro" -w /tmp/project $(PYTHON_IMAGE) sh -ec 'apt-get update -qq; apt-get install -y -qq --no-install-recommends make; cp -R /source/src /source/tests /source/scripts /source/pyproject.toml /source/README.md /source/LICENSE /source/.flake8 /source/Makefile /source/MANIFEST.in /source/CHANGELOG.md /source/SPEC.md .; mkdir data; cp /source/data/README.md data/; pip install ".[dev]"; make ci'
+	docker run --rm -v "$(CURDIR):/source:ro" -w /tmp/project $(PYTHON_IMAGE) sh -ec 'apt-get update -qq; apt-get install -y -qq --no-install-recommends make git; pip install uv; tar -C /source --exclude=.git --exclude=.venv --exclude=dist --exclude=build --exclude=_build --exclude=__pycache__ -cf - . | tar -xf -; uv sync --frozen --all-groups; make ci'
