@@ -1,0 +1,1706 @@
+{
+  "version": "2026-11-05",
+  "rules": [
+    {
+      "suffix": "gov",
+      "country": "United States",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "mil",
+      "country": "United States",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gc.ca",
+      "country": "Canada",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "canada.ca",
+      "country": "Canada",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.mx",
+      "country": "Mexico",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.jm",
+      "country": "Jamaica",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.tt",
+      "country": "Trinidad and Tobago",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bb",
+      "country": "Barbados",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bs",
+      "country": "Bahamas",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.do",
+      "country": "Dominican Republic",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.cr",
+      "country": "Costa Rica",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.pa",
+      "country": "Panama",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.gt",
+      "country": "Guatemala",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.sv",
+      "country": "El Salvador",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.hn",
+      "country": "Honduras",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.ni",
+      "country": "Nicaragua",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bz",
+      "country": "Belize",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.br",
+      "country": "Brazil",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.ar",
+      "country": "Argentina",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.cl",
+      "country": "Chile",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.co",
+      "country": "Colombia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.pe",
+      "country": "Peru",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.ve",
+      "country": "Venezuela",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.ec",
+      "country": "Ecuador",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.bo",
+      "country": "Bolivia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.py",
+      "country": "Paraguay",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gub.uy",
+      "country": "Uruguay",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.gy",
+      "country": "Guyana",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sr",
+      "country": "Suriname",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.uk",
+      "country": "United Kingdom",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.fr",
+      "country": "France",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "bund.de",
+      "country": "Germany",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "bayern.de",
+      "country": "Germany",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.it",
+      "country": "Italy",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gob.es",
+      "country": "Spain",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.pt",
+      "country": "Portugal",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "overheid.nl",
+      "country": "Netherlands",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "regering.nl",
+      "country": "Netherlands",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "belgium.be",
+      "country": "Belgium",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "fed.be",
+      "country": "Belgium",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ie",
+      "country": "Ireland",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouvernement.lu",
+      "country": "Luxembourg",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.mc",
+      "country": "Monaco",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "regeringen.se",
+      "country": "Sweden",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.se",
+      "country": "Sweden",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "regjeringen.no",
+      "country": "Norway",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.dk",
+      "country": "Denmark",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.fi",
+      "country": "Finland",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "island.is",
+      "country": "Iceland",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ee",
+      "country": "Estonia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.lv",
+      "country": "Latvia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.lt",
+      "country": "Lithuania",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.pl",
+      "country": "Poland",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.cz",
+      "country": "Czech Republic",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sk",
+      "country": "Slovakia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.hu",
+      "country": "Hungary",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ro",
+      "country": "Romania",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "government.bg",
+      "country": "Bulgaria",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.md",
+      "country": "Moldova",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ua",
+      "country": "Ukraine",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.by",
+      "country": "Belarus",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.gr",
+      "country": "Greece",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.hr",
+      "country": "Croatia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.rs",
+      "country": "Serbia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.si",
+      "country": "Slovenia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.al",
+      "country": "Albania",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mk",
+      "country": "North Macedonia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ba",
+      "country": "Bosnia and Herzegovina",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.me",
+      "country": "Montenegro",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mt",
+      "country": "Malta",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.cy",
+      "country": "Cyprus",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.in",
+      "country": "India",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "nic.in",
+      "country": "India",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.pk",
+      "country": "Pakistan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bd",
+      "country": "Bangladesh",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.lk",
+      "country": "Sri Lanka",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.np",
+      "country": "Nepal",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bt",
+      "country": "Bhutan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mv",
+      "country": "Maldives",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.af",
+      "country": "Afghanistan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.jp",
+      "country": "Japan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.kr",
+      "country": "South Korea",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.kp",
+      "country": "North Korea",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.cn",
+      "country": "China",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "政务.cn",
+      "country": "China",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mn",
+      "country": "Mongolia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.tw",
+      "country": "Taiwan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.id",
+      "country": "Indonesia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.my",
+      "country": "Malaysia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sg",
+      "country": "Singapore",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ph",
+      "country": "Philippines",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.th",
+      "country": "Thailand",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.vn",
+      "country": "Vietnam",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mm",
+      "country": "Myanmar",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.kh",
+      "country": "Cambodia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.la",
+      "country": "Laos",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bn",
+      "country": "Brunei",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.tl",
+      "country": "Timor-Leste",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.kz",
+      "country": "Kazakhstan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.uz",
+      "country": "Uzbekistan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.kg",
+      "country": "Kyrgyzstan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.tj",
+      "country": "Tajikistan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.tm",
+      "country": "Turkmenistan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sa",
+      "country": "Saudi Arabia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ae",
+      "country": "UAE",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ir",
+      "country": "Iran",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.iq",
+      "country": "Iraq",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.il",
+      "country": "Israel",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.jo",
+      "country": "Jordan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.lb",
+      "country": "Lebanon",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.om",
+      "country": "Oman",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.qa",
+      "country": "Qatar",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.kw",
+      "country": "Kuwait",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bh",
+      "country": "Bahrain",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ye",
+      "country": "Yemen",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sy",
+      "country": "Syria",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.eg",
+      "country": "Egypt",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ma",
+      "country": "Morocco",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.tn",
+      "country": "Tunisia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.dz",
+      "country": "Algeria",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ly",
+      "country": "Libya",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sd",
+      "country": "Sudan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ng",
+      "country": "Nigeria",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.gh",
+      "country": "Ghana",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.sn",
+      "country": "Senegal",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.ci",
+      "country": "Ivory Coast",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.ml",
+      "country": "Mali",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bf",
+      "country": "Burkina Faso",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.gn",
+      "country": "Guinea",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sl",
+      "country": "Sierra Leone",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.lr",
+      "country": "Liberia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.tg",
+      "country": "Togo",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.bj",
+      "country": "Benin",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.ne",
+      "country": "Niger",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.gm",
+      "country": "Gambia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.gw",
+      "country": "Guinea-Bissau",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.cv",
+      "country": "Cape Verde",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.ke",
+      "country": "Kenya",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.tz",
+      "country": "Tanzania",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "go.ug",
+      "country": "Uganda",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.et",
+      "country": "Ethiopia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.rw",
+      "country": "Rwanda",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bi",
+      "country": "Burundi",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ss",
+      "country": "South Sudan",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.er",
+      "country": "Eritrea",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.dj",
+      "country": "Djibouti",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.so",
+      "country": "Somalia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.za",
+      "country": "South Africa",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.na",
+      "country": "Namibia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.bw",
+      "country": "Botswana",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.zw",
+      "country": "Zimbabwe",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mz",
+      "country": "Mozambique",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.zm",
+      "country": "Zambia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mw",
+      "country": "Malawi",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ao",
+      "country": "Angola",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mg",
+      "country": "Madagascar",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.mu",
+      "country": "Mauritius",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sc",
+      "country": "Seychelles",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ls",
+      "country": "Lesotho",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sz",
+      "country": "Eswatini",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.au",
+      "country": "Australia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "govt.nz",
+      "country": "New Zealand",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.pg",
+      "country": "Papua New Guinea",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.fj",
+      "country": "Fiji",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.sb",
+      "country": "Solomon Islands",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.vu",
+      "country": "Vanuatu",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.nc",
+      "country": "New Caledonia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.ws",
+      "country": "Samoa",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gov.to",
+      "country": "Tonga",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "suffix": "gouv.pf",
+      "country": "French Polynesia",
+      "scope": "subtree",
+      "label": "government",
+      "source": "https://github.com/themains/gov_privacy/blob/07084c8e1d24fa3768385f42a4cbcd479115ab8e/scripts/00_get_common_crawl_gov_urls_domains.ipynb",
+      "basis": "research_heuristic",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "origin_sha256": "5c355e737f2c5910a028363890c5c040dea3dca827d00096654aa3407e84b487"
+}

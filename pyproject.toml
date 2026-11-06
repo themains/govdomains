@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "govdomains"
+version = "0.1.0"
+description = "Infer government affiliation from domain patterns and source evidence; collect reproducible hostname samples."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{name = "Gaurav Sood"}]
+keywords = ["government", "domains", "common-crawl", "classification", "research"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = ["idna>=3.7", "requests>=2.32", "urllib3>=2.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5", "black>=24", "isort>=5.13", "flake8>=7", "build>=1.2", "twine>=5"]
+
+[project.urls]
+Homepage = "https://github.com/themains/govdomains"
+Documentation = "https://github.com/themains/govdomains#readme"
+Repository = "https://github.com/themains/govdomains"
+Issues = "https://github.com/themains/govdomains/issues"
+
+[project.scripts]
+govdomains = "govdomains.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+govdomains = ["data/*.json", "py.typed"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
