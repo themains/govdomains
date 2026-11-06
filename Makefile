@@ -29,4 +29,4 @@ check:
 ci: lint test docs build
 
 ci-docker:
-	docker run --rm -v "$(CURDIR):/source:ro" -w /tmp/project $(PYTHON_IMAGE) sh -ec 'apt-get update -qq; apt-get install -y -qq --no-install-recommends make git; pip install uv; tar -C /source --exclude=.git --exclude=.venv --exclude=dist --exclude=build --exclude=_build --exclude=__pycache__ -cf - . | tar -xf -; uv sync --frozen --all-groups; make ci'
+	docker run --rm -v "$(CURDIR):/source:ro" -w /tmp/project $(PYTHON_IMAGE) sh -ec 'apt-get update -qq; apt-get install -y -qq --no-install-recommends make git libatomic1; pip install uv; tar -C /source --exclude=.git --exclude=.venv --exclude=dist --exclude=build --exclude=_build --exclude=__pycache__ -cf - . | tar -xf -; uv sync --frozen --all-groups; make ci'
