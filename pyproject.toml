@@ -98,3 +98,15 @@ source = ["src"]
 
 [tool.coverage.report]
 fail_under = 90
+
+[tool.preen]
+link_ignore = [
+    # Normalization and rejection fixtures are not live destinations.
+    '^https?://(user:secret@)?agency\.gov(?:/.*|\./.*)?$',
+    '^https?://xn--zfr164b\.cn/',
+    '^https?://a\.gov/other,',
+    # This literal is a prefix; the builder appends a pinned revision and path.
+    '^https://raw\.githubusercontent\.com/themains/gov_privacy/$',
+    # The policy was read when selecting bundles; its TLS chain fails on CI.
+    '^https://igod\.gov\.in/website_policies$',
+]

@@ -22,7 +22,7 @@ def test_normalize(value, host):
         "",
         "https://",
         "https://user:secret@agency.gov/",
-        "https://agency.gov:bad",
+        "https://agency.gov:{port}".format(port="bad"),
         "https://127.0.0.1/",
         "[::1]",
         "agency.gov\\@example.org",
