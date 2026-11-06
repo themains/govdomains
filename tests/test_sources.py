@@ -14,7 +14,10 @@ def test_cisa_preserves_types_but_not_contacts():
     snapshot = parse_list(
         source, source="cisa:test", format="cisa", observed_on="2024-01-01"
     )
-    assert snapshot.evidence[0].attributes == {"Domain type": "City"}
+    assert snapshot.evidence[0].attributes == {
+        "Domain type": "City",
+        "source_value": "city.gov",
+    }
     assert snapshot.evidence[0].observed_on == "2024-01-01"
 
 

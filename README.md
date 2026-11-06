@@ -8,7 +8,8 @@ observations, and export estimates with their provenance.
 
 The package extracts the discovery patterns developed in
 [gov_privacy](https://github.com/themains/gov_privacy). It ships 170 research
-heuristics covering 162 country labels, not a global government-domain database.
+heuristics covering 162 country labels and selected CISA and Govdirectory lists.
+The bundled lists are dated source snapshots, not a complete global population.
 The rules have not been independently validated as a classifier. A positive
 result is an inference; a pattern match does not verify ownership, existence,
 or current use. A missing match means unknown.
@@ -18,12 +19,69 @@ or current use. A missing match means unknown.
 Python 3.11 or newer. Until a PyPI release is published:
 
 ```sh
-pip install git+https://github.com/themains/govdomains.git
+pip install 'govdomains[data] @ git+https://github.com/themains/govdomains.git'
 ```
 
 There is no implicit network access during import or classification. Fetching
 source lists and querying Common Crawl are explicit operations. No model,
-browser, paid API, or bulk dataset download is required.
+browser, paid API, or separate dataset download is required. The `data` extra
+installs PyArrow to read the bundled Parquet tables. Omit the extra when using
+only patterns, local CSV imports, and network collection.
+
+## Use the bundled lists offline
+
+```python
+from govdomains import Classifier, bundled_sources, load_bundled
+
+print(bundled_sources().keys())
+snapshot = load_bundled()
+print(len(snapshot.hostnames))
+classifier = Classifier(snapshot.evidence)
+result = classifier.classify_one("www.bundeskanzleramt.gv.at")
+print(result.label, result.methods)
+```
+
+`load_bundled()` selects the latest **shipped** CISA and Govdirectory snapshots.
+It does not fetch updates. `Classifier()` by itself continues to use patterns
+only; pass the snapshot's evidence to include the lists.
+
+| Bundle | Unique listed hostnames | Observation date | Default |
+|---|---:|---|---|
+| `cisa` | 17,025 | 2026-11-06 UTC retrieval | Yes |
+| `govdirectory` | 12,787 | 2026-11-06 UTC collection | Yes |
+| `cisa_research` | 12,047 | Unknown, retained from gov_privacy | No |
+| `govdirectory_research` | 9,696 | Unknown, retained from gov_privacy | No |
+
+The Govdirectory snapshot covers the 46 jurisdiction pages published by its
+index, including the European Union. This is source coverage, not a claim that
+every government body in those jurisdictions is represented. Website addresses,
+institution names, source categories, entity links, and source update dates are
+retained where supplied. Government tiers are not harmonized across sources.
+
+```sh
+govdomains bundled
+govdomains bundled --output lists.json
+govdomains bundled govdirectory_research --output research.json
+govdomains classify www.bundeskanzleramt.gv.at --bundled govdirectory
+govdomains export lists.json --label government --output hosts.csv
+```
+
+Select one or more named snapshots with `load_bundled("govdirectory")` or
+`load_bundled("cisa_research", "govdirectory_research")`. Research extracts are
+never silently mixed into the default selection. Their unknown dates remain
+unknown, so they cannot establish a dated historical inference. A retrieval
+date does not establish that every entry was current on that date.
+
+`snapshot.hostnames` includes all listed candidate hosts, including page-scoped
+observations. Classification/export can narrow this to inferred government
+hosts. Page-only evidence does not establish affiliation for the entire host,
+and exact-host list evidence does not propagate to its subdomains.
+
+The four normalized tables occupy about 1.9 MB before wheel compression. Each
+has a declared Arrow schema, counts, SHA-256 checksum, upstream provenance, and
+CC0 license attribution. Raw downloaded responses are preserved in the
+repository's `data/raw/`, outside the wheel. See [data/README.md](data/README.md)
+for source scope, historical comparisons, and the fetch/build commands.
 
 ## Classify hostnames
 
@@ -175,11 +233,13 @@ input snapshot and rule hashes, filters, counts, source metadata, and CSV hash.
 Hostnames, subdomains, and `www` aliases are not silently collapsed into one
 institution. All exported populations have unknown completeness.
 
-No source lists or crawl datasets are bundled or published by this package.
-Users choose which inputs to collect and which outputs to retain or distribute.
-The included rules are attributed in each record; source data keeps its own
-license and redistribution conditions. Do not copy credentials or private
-source material into a published snapshot.
+Selected CISA and Govdirectory source lists are bundled under CC0-1.0; their
+manifest records input hashes, source URLs, dates, and row accounting. The
+loader checks the Parquet checksum, schema, dates, required values, uniqueness,
+and counts before returning evidence. The code remains Apache-2.0 licensed.
+No crawl URL inventory or website content corpus is shipped. Source data keeps
+its own license and redistribution conditions. India and GSA imports remain
+available, but their lists are not included in this first bundle.
 
 ## Development
 
@@ -194,7 +254,8 @@ make ci-docker
 `make ci` checks Black, isort, flake8, tests, the wheel/sdist build, and package
 metadata. Tests block network access and exercise installed-package behavior,
 normalization, conflicts, historical filtering, source parsing, CLI roundtrips,
-streaming collection, pagination, checkpoints, and failure recovery.
+streaming collection, pagination, checkpoints, failure recovery, bundled data
+integrity, and parsing of archived Govdirectory pages.
 
 Docker CI uses the standard `python:3.14-slim` image; override `PYTHON_IMAGE` to
 test another supported version. GitHub CI tests Python 3.11 through 3.14.

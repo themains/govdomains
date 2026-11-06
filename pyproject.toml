@@ -25,7 +25,9 @@ classifiers = [
 dependencies = ["idna>=3.7", "requests>=2.32", "urllib3>=2.2"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "pytest-cov>=5", "black>=24", "isort>=5.13", "flake8>=7", "build>=1.2", "twine>=5"]
+data = ["pyarrow>=21"]
+collect = ["beautifulsoup4>=4.13"]
+dev = ["pytest>=8", "pytest-cov>=5", "black>=24", "isort>=5.13", "flake8>=7", "build>=1.2", "twine>=5", "pyarrow>=21", "beautifulsoup4>=4.13"]
 
 [project.urls]
 Homepage = "https://github.com/themains/govdomains"
@@ -40,7 +42,7 @@ govdomains = "govdomains.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-govdomains = ["data/*.json", "py.typed"]
+govdomains = ["data/*.json", "data/bundled/*.json", "data/bundled/*.parquet", "data/bundled/*.txt", "py.typed"]
 
 [tool.black]
 line-length = 88

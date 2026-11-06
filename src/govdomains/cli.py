@@ -7,6 +7,7 @@ from pathlib import Path
 
 import requests
 
+from .bundled import bundled_sources, load_bundled
 from .core import Classifier, load_rules
 from .crawl import CommonCrawl, import_crawl_csv
 from .snapshot import Snapshot
@@ -20,10 +21,16 @@ def parser() -> argparse.ArgumentParser:
     classify.add_argument("hosts", nargs="*")
     classify.add_argument("--file", type=Path)
     classify.add_argument("--snapshot", type=Path)
+    classify.add_argument("--bundled", action="append", default=[], metavar="SOURCE")
     classify.add_argument("--as-of")
     classify.add_argument("--allow-undated-rules", action="store_true")
     rules = commands.add_parser("rules", help="List the bundled discovery rules")
     rules.add_argument("--country")
+    bundled = commands.add_parser(
+        "bundled", help="Inspect or save bundled source lists offline"
+    )
+    bundled.add_argument("sources", nargs="*")
+    bundled.add_argument("--output", type=Path)
     fetch = commands.add_parser("fetch", help="Fetch a current source list explicitly")
     fetch.add_argument("source", choices=sorted(SOURCES))
     fetch.add_argument("--output", required=True, type=Path)
@@ -73,6 +80,8 @@ def main(argv=None) -> int:
             if not values:
                 raise ValueError("Supply hosts or --file")
             evidence = Snapshot.load(args.snapshot).evidence if args.snapshot else ()
+            if args.bundled:
+                evidence += load_bundled(*args.bundled).evidence
             results = Classifier(evidence).classify(
                 values, as_of=args.as_of, allow_undated_rules=args.allow_undated_rules
             )
@@ -88,6 +97,11 @@ def main(argv=None) -> int:
                 ):
                     print(json.dumps(asdict(rule), ensure_ascii=False))
             return 0
+        if args.command == "bundled" and not args.output:
+            if args.sources:
+                raise ValueError("Supply --output when selecting bundled sources")
+            print(json.dumps(bundled_sources(), ensure_ascii=False, indent=2))
+            return 0
         if args.command == "export":
             report = Snapshot.load(args.snapshot).export_csv(
                 args.output,
@@ -96,7 +110,9 @@ def main(argv=None) -> int:
                 allow_undated_rules=args.allow_undated_rules,
             )
         else:
-            if args.command == "fetch":
+            if args.command == "bundled":
+                snapshot = load_bundled(*args.sources)
+            elif args.command == "fetch":
                 snapshot = fetch_list(args.source)
             elif args.command == "import-crawl":
                 snapshot = import_crawl_csv(args.path, source=args.source)
@@ -122,7 +138,14 @@ def main(argv=None) -> int:
             report = {"hosts": len(snapshot.hostnames), "metadata": snapshot.metadata}
         print(json.dumps(report, ensure_ascii=False), file=sys.stderr)
         return 0
-    except (ValueError, KeyError, TypeError, OSError, requests.RequestException) as exc:
+    except (
+        ValueError,
+        KeyError,
+        TypeError,
+        OSError,
+        ImportError,
+        requests.RequestException,
+    ) as exc:
         print(f"govdomains: {exc}", file=sys.stderr)
         return 2
 

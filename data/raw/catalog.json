@@ -1,0 +1,404 @@
+{
+  "cisa": {
+    "date_basis": "retrieval_observation",
+    "default": true,
+    "format": "cisa",
+    "inputs": [
+      {
+        "fetched_at": "2026-11-06T04:46:08.426837+00:00",
+        "raw_path": "data/raw/2026-11-06/cisa/current-full.jsonl.gz",
+        "sha256": "303394eee9aeccb582447ba730bd6fec7d09f6d99c733926174e54eba8d66324",
+        "url": "https://raw.githubusercontent.com/cisagov/dotgov-data/8799d89db33ea564b66d7cb541126cfe738cbc81/current-full.csv"
+      }
+    ],
+    "license": "CC0-1.0",
+    "license_input": {
+      "fetched_at": "2026-11-06T04:46:08.612447+00:00",
+      "raw_path": "data/raw/2026-11-06/cisa/license.jsonl.gz",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "url": "https://raw.githubusercontent.com/cisagov/dotgov-data/8799d89db33ea564b66d7cb541126cfe738cbc81/LICENSE"
+    },
+    "license_url": "https://raw.githubusercontent.com/cisagov/dotgov-data/8799d89db33ea564b66d7cb541126cfe738cbc81/LICENSE",
+    "observed_on": "2026-11-06",
+    "upstream_revision": "8799d89db33ea564b66d7cb541126cfe738cbc81"
+  },
+  "cisa_research": {
+    "date_basis": "unknown original collection date; Git date is not an observation date",
+    "default": false,
+    "format": "cisa",
+    "inputs": [
+      {
+        "fetched_at": null,
+        "raw_path": "data/raw/research/cisa_research.jsonl.gz",
+        "sha256": "f05081b8319e967886bea4a8d518751971e487e39080ca2dae8f720ab2e420c6",
+        "url": "https://raw.githubusercontent.com/themains/gov_privacy/3a294e2a12abf53a5a6f04a2657038e630393e76/data/us_gov_domain_list.csv"
+      }
+    ],
+    "license": "CC0-1.0",
+    "license_url": "https://github.com/cisagov/dotgov-data/blob/main/LICENSE",
+    "observed_on": null,
+    "upstream_revision": "3a294e2a12abf53a5a6f04a2657038e630393e76"
+  },
+  "govdirectory": {
+    "date_basis": "collection_completed; individual retrieval times in inputs",
+    "default": true,
+    "format": "govdirectory_html",
+    "index_input": {
+      "fetched_at": "2026-11-06T04:46:08.898097+00:00",
+      "raw_path": "data/raw/2026-11-06/govdirectory/countries.jsonl.gz",
+      "sha256": "020eb6788fa7ef86f5b7a31f22c1e561e435f7d0ba324f3481ba8860cf7e7a63",
+      "url": "https://www.govdirectory.org/countries/"
+    },
+    "inputs": [
+      {
+        "fetched_at": "2026-11-06T04:46:09.443806+00:00",
+        "jurisdiction_label": "Austria",
+        "raw_path": "data/raw/2026-11-06/govdirectory/austria.jsonl.gz",
+        "sha256": "0f62a7d9f821cc22580510653d335fb1a59344a0d764496e7ad45e88985b76fa",
+        "url": "https://www.govdirectory.org/austria/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:09.824812+00:00",
+        "jurisdiction_label": "Bangladesh",
+        "raw_path": "data/raw/2026-11-06/govdirectory/bangladesh.jsonl.gz",
+        "sha256": "fd692854ccf1524fdc27a95aee74d0b6e684e439c6b89d2a246ae0b363577e31",
+        "url": "https://www.govdirectory.org/bangladesh/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:10.228264+00:00",
+        "jurisdiction_label": "Belgium",
+        "raw_path": "data/raw/2026-11-06/govdirectory/belgium.jsonl.gz",
+        "sha256": "d96dadfed10e7230fd194db2df8e5913e4ebea1a6e814148fe8f96910292af66",
+        "url": "https://www.govdirectory.org/belgium/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:10.616362+00:00",
+        "jurisdiction_label": "Bermuda",
+        "raw_path": "data/raw/2026-11-06/govdirectory/bermuda.jsonl.gz",
+        "sha256": "8450dcc4ad9896f3831f770e11f61f8f6fa9cb9ac34392bedd90edd9c0b704bf",
+        "url": "https://www.govdirectory.org/bermuda/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:11.384599+00:00",
+        "jurisdiction_label": "Bulgaria",
+        "raw_path": "data/raw/2026-11-06/govdirectory/bulgaria.jsonl.gz",
+        "sha256": "39da81847c720b74365d4b589e838602b1f73bcf4e59a63a166fa41799587fcb",
+        "url": "https://www.govdirectory.org/bulgaria/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:11.764602+00:00",
+        "jurisdiction_label": "Cameroon",
+        "raw_path": "data/raw/2026-11-06/govdirectory/cameroon.jsonl.gz",
+        "sha256": "4136267357dcfb2e3a1be73aef065c810c5ec4054e76a96ce265151ba81d9fb2",
+        "url": "https://www.govdirectory.org/cameroon/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:12.150687+00:00",
+        "jurisdiction_label": "Canada",
+        "raw_path": "data/raw/2026-11-06/govdirectory/canada.jsonl.gz",
+        "sha256": "7a29844d39a4132116f656b75db6b7a4980f13fd608966e4cdce4a4bbe27e4be",
+        "url": "https://www.govdirectory.org/canada/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:12.663405+00:00",
+        "jurisdiction_label": "Chile",
+        "raw_path": "data/raw/2026-11-06/govdirectory/chile.jsonl.gz",
+        "sha256": "eff37381853233c8df07f78810aff24a4ed425689c1b978a8403836f49f76f10",
+        "url": "https://www.govdirectory.org/chile/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:13.092438+00:00",
+        "jurisdiction_label": "Cuba",
+        "raw_path": "data/raw/2026-11-06/govdirectory/cuba.jsonl.gz",
+        "sha256": "90b834e2e807def5c515d64680d834ce06258c8ac47ac9684a9d3f0c82bea43d",
+        "url": "https://www.govdirectory.org/cuba/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:13.472734+00:00",
+        "jurisdiction_label": "Cyprus",
+        "raw_path": "data/raw/2026-11-06/govdirectory/cyprus.jsonl.gz",
+        "sha256": "8dfde897dc3056ccf5ab5cd0dffa7d75cb1ff2893158e6b590b5307942b4bac3",
+        "url": "https://www.govdirectory.org/cyprus/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:13.851260+00:00",
+        "jurisdiction_label": "Czech Republic",
+        "raw_path": "data/raw/2026-11-06/govdirectory/czech-republic.jsonl.gz",
+        "sha256": "d7126c463399f3a9d437805391fcd6e45ae61422e5b9adaae2755bb00568868c",
+        "url": "https://www.govdirectory.org/czech-republic/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:14.281304+00:00",
+        "jurisdiction_label": "Denmark",
+        "raw_path": "data/raw/2026-11-06/govdirectory/denmark.jsonl.gz",
+        "sha256": "883c50e200f08e8b091d8d918aa5b4f2fbd4d1a7153c4531ddb541fab86e06af",
+        "url": "https://www.govdirectory.org/denmark/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:14.674777+00:00",
+        "jurisdiction_label": "East Timor",
+        "raw_path": "data/raw/2026-11-06/govdirectory/east-timor.jsonl.gz",
+        "sha256": "1cc949ff5305fd5622c52b3f28c02e7d3ae9330284b8ecaaea09d3de2b4b2cf5",
+        "url": "https://www.govdirectory.org/east-timor/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:15.038249+00:00",
+        "jurisdiction_label": "Eswatini",
+        "raw_path": "data/raw/2026-11-06/govdirectory/eswatini.jsonl.gz",
+        "sha256": "a625f6bfc37a142b9b7dd6381c50cbd3d707a96aaf071df2be0b0fa80a235eea",
+        "url": "https://www.govdirectory.org/eswatini/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:15.414612+00:00",
+        "jurisdiction_label": "European Union",
+        "raw_path": "data/raw/2026-11-06/govdirectory/european-union.jsonl.gz",
+        "sha256": "ca3eab7ca09e8ae935d316d31fb5223c5c4fb5736e8c250d50c6bb2f3c63f396",
+        "url": "https://www.govdirectory.org/european-union/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:15.837378+00:00",
+        "jurisdiction_label": "Finland",
+        "raw_path": "data/raw/2026-11-06/govdirectory/finland.jsonl.gz",
+        "sha256": "bc699e9771b97fc90ea1ae28cbaacccedf17f448b6f34f798d1ed738a3fca1db",
+        "url": "https://www.govdirectory.org/finland/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:16.237356+00:00",
+        "jurisdiction_label": "Germany",
+        "raw_path": "data/raw/2026-11-06/govdirectory/germany.jsonl.gz",
+        "sha256": "f2d83306bcdb685233972c2b387f80fcc693b6d4fd12c6f3242a035f2aadf43a",
+        "url": "https://www.govdirectory.org/germany/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:16.623547+00:00",
+        "jurisdiction_label": "Ghana",
+        "raw_path": "data/raw/2026-11-06/govdirectory/ghana.jsonl.gz",
+        "sha256": "79a62f6ff058546cfd40d0c8b52bc98cb277890c6693b6b295112c8c507db0fb",
+        "url": "https://www.govdirectory.org/ghana/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:17.066179+00:00",
+        "jurisdiction_label": "Greenland",
+        "raw_path": "data/raw/2026-11-06/govdirectory/greenland.jsonl.gz",
+        "sha256": "491b548b7f1f23b789c5a1bfd8e4dfc859918a68a3d8e1c19f5544d9c13b954b",
+        "url": "https://www.govdirectory.org/greenland/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:17.435490+00:00",
+        "jurisdiction_label": "Iceland",
+        "raw_path": "data/raw/2026-11-06/govdirectory/iceland.jsonl.gz",
+        "sha256": "d9c48fd982052045d9871f221043e23ccce9b0c58022e74b2899ecaf51b53c7f",
+        "url": "https://www.govdirectory.org/iceland/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:17.804490+00:00",
+        "jurisdiction_label": "India",
+        "raw_path": "data/raw/2026-11-06/govdirectory/india.jsonl.gz",
+        "sha256": "2e4b61b9ddc929ea462556f93d38b940c3f51ef17c721f0289f699091b87841e",
+        "url": "https://www.govdirectory.org/india/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:18.193323+00:00",
+        "jurisdiction_label": "Indonesia",
+        "raw_path": "data/raw/2026-11-06/govdirectory/indonesia.jsonl.gz",
+        "sha256": "b216aa5c810c1361dc80ed2ed9083182523071a346851ec0aeddb80a5578a1ff",
+        "url": "https://www.govdirectory.org/indonesia/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:18.562476+00:00",
+        "jurisdiction_label": "Ireland",
+        "raw_path": "data/raw/2026-11-06/govdirectory/ireland.jsonl.gz",
+        "sha256": "dde46d76bad2659925451a7be3a203b6eeedb89ee99fffeb2d8045c08d4d9a77",
+        "url": "https://www.govdirectory.org/ireland/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:18.975907+00:00",
+        "jurisdiction_label": "Japan",
+        "raw_path": "data/raw/2026-11-06/govdirectory/japan.jsonl.gz",
+        "sha256": "54d7281d7c1bb13a9922624e45f438915dfae6b2850a2d046e0991cc7233eb54",
+        "url": "https://www.govdirectory.org/japan/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:19.378003+00:00",
+        "jurisdiction_label": "Latvia",
+        "raw_path": "data/raw/2026-11-06/govdirectory/latvia.jsonl.gz",
+        "sha256": "d0fa0f16f3a22b26c1e5bbfa4673796d52b6456e1d5cf1aca6bcc4a283a569e7",
+        "url": "https://www.govdirectory.org/latvia/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:19.769327+00:00",
+        "jurisdiction_label": "Luxembourg",
+        "raw_path": "data/raw/2026-11-06/govdirectory/luxembourg.jsonl.gz",
+        "sha256": "0abae2afc2539f0bccc123170d3a5b8bd91d2e26aa73dd66160957ba2d908251",
+        "url": "https://www.govdirectory.org/luxembourg/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:20.143764+00:00",
+        "jurisdiction_label": "Malaysia",
+        "raw_path": "data/raw/2026-11-06/govdirectory/malaysia.jsonl.gz",
+        "sha256": "095203497321d1debd74a7f64b3faa22bcb1a872f5e882b7b09728f556bfede1",
+        "url": "https://www.govdirectory.org/malaysia/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:20.552851+00:00",
+        "jurisdiction_label": "Malta",
+        "raw_path": "data/raw/2026-11-06/govdirectory/malta.jsonl.gz",
+        "sha256": "dff1d0c361c430cd2ca13ffd9a0e81377ce30f1c521eb03730ec72c863aa82cb",
+        "url": "https://www.govdirectory.org/malta/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:20.949164+00:00",
+        "jurisdiction_label": "Morocco",
+        "raw_path": "data/raw/2026-11-06/govdirectory/morocco.jsonl.gz",
+        "sha256": "2ab8cf647becee21be0595a97c59d5533ed43f0a3c85ea1474f78536d5d8428c",
+        "url": "https://www.govdirectory.org/morocco/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:21.325913+00:00",
+        "jurisdiction_label": "Nepal",
+        "raw_path": "data/raw/2026-11-06/govdirectory/nepal.jsonl.gz",
+        "sha256": "15c4d199a0bc1ede3161a9629146b1dbbcec8a59ec05d64684ce97bde283eb0f",
+        "url": "https://www.govdirectory.org/nepal/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:21.720238+00:00",
+        "jurisdiction_label": "Netherlands",
+        "raw_path": "data/raw/2026-11-06/govdirectory/netherlands.jsonl.gz",
+        "sha256": "2623e39583736262bd731b177e7786307e03a099e3d09a9fb239acd3d70b53b1",
+        "url": "https://www.govdirectory.org/netherlands/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:22.108305+00:00",
+        "jurisdiction_label": "New Zealand",
+        "raw_path": "data/raw/2026-11-06/govdirectory/new-zealand.jsonl.gz",
+        "sha256": "4697b6438ea492f7d4d99aa1d72ffc2e1ded8c5042218362040dcc37e165cb34",
+        "url": "https://www.govdirectory.org/new-zealand/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:22.577351+00:00",
+        "jurisdiction_label": "Norway",
+        "raw_path": "data/raw/2026-11-06/govdirectory/norway.jsonl.gz",
+        "sha256": "1810a0a86aec16c9df8a64c20e7a79a717dc29f6dd3eeb994bab086675d69d42",
+        "url": "https://www.govdirectory.org/norway/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:23.129367+00:00",
+        "jurisdiction_label": "Peru",
+        "raw_path": "data/raw/2026-11-06/govdirectory/peru.jsonl.gz",
+        "sha256": "c58448f72d42b51e29d43e048187e0b3b98f44fdc5d6f35d8ab7dfd1c410f0a7",
+        "url": "https://www.govdirectory.org/peru/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:23.571086+00:00",
+        "jurisdiction_label": "Philippines",
+        "raw_path": "data/raw/2026-11-06/govdirectory/philippines.jsonl.gz",
+        "sha256": "668ec5fe8700dcb4e571c594e1ce8a1ca852fee390fd0791b948300fa672109d",
+        "url": "https://www.govdirectory.org/philippines/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:24.096598+00:00",
+        "jurisdiction_label": "Poland",
+        "raw_path": "data/raw/2026-11-06/govdirectory/poland.jsonl.gz",
+        "sha256": "ff885144c52f1ac31af3f62fd441e914e2d43c9f5b3bdc17f7cdef76b2ce39e8",
+        "url": "https://www.govdirectory.org/poland/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:24.491044+00:00",
+        "jurisdiction_label": "Portugal",
+        "raw_path": "data/raw/2026-11-06/govdirectory/portugal.jsonl.gz",
+        "sha256": "f775df2993b4e18ae8a7483ed7a9e7a5f487a87fbdb8a10a70db0edac9b87787",
+        "url": "https://www.govdirectory.org/portugal/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:24.871337+00:00",
+        "jurisdiction_label": "Russia",
+        "raw_path": "data/raw/2026-11-06/govdirectory/russia.jsonl.gz",
+        "sha256": "df379fe08e507b426ef8144aa6284172c82845e65667d467f2fa08ef3f703385",
+        "url": "https://www.govdirectory.org/russia/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:25.241118+00:00",
+        "jurisdiction_label": "Singapore",
+        "raw_path": "data/raw/2026-11-06/govdirectory/singapore.jsonl.gz",
+        "sha256": "0deb1028acfbd4f23b6dccb526a3716844315f82c24fe843e0702ae62a1157b9",
+        "url": "https://www.govdirectory.org/singapore/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:25.670346+00:00",
+        "jurisdiction_label": "South Africa",
+        "raw_path": "data/raw/2026-11-06/govdirectory/south-africa.jsonl.gz",
+        "sha256": "ebe14ad3ed7f8f6698160b3e80037fd7292ce268c0b3cdbc10630e3cee1a54e5",
+        "url": "https://www.govdirectory.org/south-africa/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:26.192516+00:00",
+        "jurisdiction_label": "Sweden",
+        "raw_path": "data/raw/2026-11-06/govdirectory/sweden.jsonl.gz",
+        "sha256": "a1fbe0602b21f6ecd865645f71a16f8186bb78458f217fbe573a593293464021",
+        "url": "https://www.govdirectory.org/sweden/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:26.570701+00:00",
+        "jurisdiction_label": "Switzerland",
+        "raw_path": "data/raw/2026-11-06/govdirectory/switzerland.jsonl.gz",
+        "sha256": "a1b52a17b68598aee659d29e83ebf07b2de1a776c82ad46eaca68e93098e0ae2",
+        "url": "https://www.govdirectory.org/switzerland/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:27.030726+00:00",
+        "jurisdiction_label": "Ukraine",
+        "raw_path": "data/raw/2026-11-06/govdirectory/ukraine.jsonl.gz",
+        "sha256": "6ee670dc679a767a6be0b33d9445fa9136303b2f16ee4a98f9da3b61d2af06f0",
+        "url": "https://www.govdirectory.org/ukraine/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:27.430673+00:00",
+        "jurisdiction_label": "United Kingdom",
+        "raw_path": "data/raw/2026-11-06/govdirectory/united-kingdom.jsonl.gz",
+        "sha256": "bb705d6e21347bbb269ca8e72fb64911be24e24f7e8c358f8a411cb30a9effc9",
+        "url": "https://www.govdirectory.org/united-kingdom/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:27.982667+00:00",
+        "jurisdiction_label": "United States",
+        "raw_path": "data/raw/2026-11-06/govdirectory/united-states.jsonl.gz",
+        "sha256": "fdfc3b7e9a7562d1bee3f25f13c12122245a672553a18d0fbebe1558526ac3de",
+        "url": "https://www.govdirectory.org/united-states/"
+      },
+      {
+        "fetched_at": "2026-11-06T04:46:28.402576+00:00",
+        "jurisdiction_label": "Uruguay",
+        "raw_path": "data/raw/2026-11-06/govdirectory/uruguay.jsonl.gz",
+        "sha256": "4312e312963341d4dfb613123a92a84000c87bed6e9db20dd245d0f1c3ebd3f0",
+        "url": "https://www.govdirectory.org/uruguay/"
+      }
+    ],
+    "jurisdiction_pages": 46,
+    "license": "CC0-1.0",
+    "license_input": {
+      "fetched_at": "2026-11-06T04:46:28.820705+00:00",
+      "raw_path": "data/raw/2026-11-06/govdirectory/terms.jsonl.gz",
+      "sha256": "2a72a10df7b06fc92bfb244a649847455efecbf82c9542c0ac136c2d0777aabf",
+      "url": "https://www.govdirectory.org/about/"
+    },
+    "license_url": "https://www.govdirectory.org/about/",
+    "observed_on": "2026-11-06"
+  },
+  "govdirectory_research": {
+    "date_basis": "unknown original collection date; Git date is not an observation date",
+    "default": false,
+    "format": "govdirectory",
+    "inputs": [
+      {
+        "fetched_at": null,
+        "raw_path": "data/raw/research/govdirectory_research.jsonl.gz",
+        "sha256": "598900dbfcd2f304fb8ee611ceaf9d6380aba8bcbae4245da7e9e4ce7d620363",
+        "url": "https://raw.githubusercontent.com/themains/gov_privacy/3a294e2a12abf53a5a6f04a2657038e630393e76/data/combined_tsv_data.tsv"
+      }
+    ],
+    "license": "CC0-1.0",
+    "license_url": "https://www.govdirectory.org/about/",
+    "observed_on": null,
+    "upstream_revision": "3a294e2a12abf53a5a6f04a2657038e630393e76"
+  }
+}

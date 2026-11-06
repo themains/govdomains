@@ -27,7 +27,7 @@ FORMATS = {
     "cisa": (
         "Domain name",
         ",",
-        ["Domain type", "Agency", "Organization name", "State"],
+        ["Domain type", "Agency", "Organization name", "City", "State"],
     ),
     "gsa": (
         "Domain name",
@@ -35,7 +35,11 @@ FORMATS = {
         ["Agency", "Type of government", "Federal branch", "State"],
     ),
     "india": ("url", ",", ["name", "sector"]),
-    "govdirectory": ("Website", "\t", ["Name", "Type", "source_file"]),
+    "govdirectory": (
+        "Website",
+        "\t",
+        ["Name", "Type", "source_file", "Govdirectory URL", "source_updated_on"],
+    ),
     "generic": ("hostname", ",", []),
 }
 
@@ -105,7 +109,10 @@ def parse_list(
                 label=label,
                 observed_on=observed_on,
                 scope=scope,
-                attributes={key: row[key] for key in attributes if row.get(key)},
+                attributes={
+                    **{key: row[key] for key in attributes if row.get(key)},
+                    "source_value": value.strip(),
+                },
             )
         )
     if counts["rows"] and not evidence:

@@ -1,5 +1,6 @@
 """Government hostname inference and evidence collection."""
 
+from .bundled import bundled_sources, load_bundled
 from .core import Classifier, Evidence, Result, Rule, load_rules
 from .normalize import normalize_hostname
 from .snapshot import Snapshot
@@ -12,4 +13,6 @@ __all__ = [
     "Snapshot",
     "load_rules",
     "normalize_hostname",
+    "bundled_sources",
+    "load_bundled",
 ]
